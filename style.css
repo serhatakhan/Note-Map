@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#map {
+  height: 100vh;
+  z-index: 20;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.wrapper {
+  display: flex;
+  align-items: start;
+  margin-top: 75px;
+  position: fixed;
+  left: 10px;
+  z-index: 50;
+  height: 100vh;
+}
+
+aside {
+  background: rgba(53, 51, 51, 0.7);
+  color: white;
+  height: 610px;
+  width: 280px;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: 250ms ease;
+}
+
+aside:hover {
+  background: rgb(53, 51, 51);
+}
+
+h1 {
+  position: fixed;
+  top: 75px;
+  left: 50;
+  width: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "indie flower";
+  font-size: 33px;
+  letter-spacing: 3px;
+  background: rgb(53, 51, 51);
+  color: #fff;
+  padding: 3px 21px;
+  border-radius: 10px;
+  z-index: 999;
+
+}
+
+h1 i{
+    cursor: pointer;
+    font-size: 25px;
+    transition: 250ms ease;
+}
+h1 i:hover{
+    transform: scale(.9);
+}
+
+form {
+  display: none;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 50px;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+form input,
+form select {
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 13px;
+  border: none;
+}
+
+.buttons {
+  flex-direction: row;
+  /*normalde column ile alt altaydılar row ile yan yana getirdik.*/
+}
+
+.buttons button {
+  flex: 1;
+  /*bu alana olabilidğince geniş tut dedik. 
+    burada genileyebildiği kadar genişle dedik.*/
+  background-color: rgb(0, 8, 33);
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  border: none;
+  padding: 6px;
+  border-radius: 10px;
+  border: 2px solid transparent;
+}
+
+.buttons button:first-child {
+  background-color: rgb(231, 231, 231);
+  color: black;
+}
+
+.buttons button:hover {
+  filter: brightness(70%);
+  border: 2px solid purple;
+}
+
+/* listeleme alanı */
+ul {
+  overflow: auto; /*listenin kalan kısımlarını kaydırma çubuğu ile görmek için*/
+  height: 100%;
+  margin-top: 40px;
+  padding-right: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+ul::-webkit-scrollbar {
+  background: transparent;
+  width: 6px;
+}
+
+ul::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 4px;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(70, 70, 70);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+li p:first-child {
+  font-family: "indie flower", sans-serif;
+  font-size: x-large;
+}
+
+li p span:first-child {
+  font-weight: bold;
+}
+
+li .icons {
+  display: flex;
+  gap: 10px;
+}
+
+li i {
+  cursor: pointer;
+  font-size: 20px;
+}
+
+li .icons i:first-child:hover {
+  filter: drop-shadow(0 0 10px rgb(0, 76, 255)); /*gölge yapmış olduk*/
+}
+
+li .icons i:last-child:hover {
+  filter: drop-shadow(0 0 10px red);
+}
+
+.hide{
+    display: none;
+}
+
+/* media queries */
+@media (max-width: 768px) {
+   .wrapper{
+    width: 100vw;
+    height: auto;
+    margin-top: 0;
+    left: 0;
+    border-radius: 0;
+   }
+
+   aside{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: auto;
+    border-radius: 0;
+   }
+
+   h1{
+    border-radius: 0;
+    width: 100vw;
+    top: 0;
+    left: 0;
+   }
+}
